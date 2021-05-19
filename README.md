@@ -1,28 +1,31 @@
 <h1 align="center">Welcome to iOS ringtone maker from Youtube video 👋</h1>
-<p>
-  <a href="d" target="_blank">
-    <img alt="License: LICENSE" src="https://img.shields.io/badge/License-LICENSE-yellow.svg" />
-  </a>
-  <a href="https://twitter.com/CageChung" target="_blank">
-    <img alt="Twitter: CageChung" src="https://img.shields.io/twitter/follow/CageChung.svg?style=social" />
-  </a>
-</p>
+
+[![Build](https://github.com/cage1016/ios-ringtone-maker-yt/actions/workflows/release.yml/badge.svg)](https://github.com/cage1016/ios-ringtone-maker-yt/actions/workflows/release.yml)
+![License: LICENSE](https://img.shields.io/badge/License-LICENSE-yellow.svg)
+![Twitter: CageChung](https://img.shields.io/twitter/follow/CageChung.svg?style=social)
+
 
 > Make iOS ringtone from Youtube video
 
 ## Usage
 
-```sh
-# VID: youtube video id
-# SS: start time (format: 00:00:22)
-# T: ringtime duration: second
-$ docker run --rm -it -v $(PWD)/output:/app/output VID=<youtube-video-id> -e SS=00:00:22 -e T=30 cage1016/ios-ringtone-maker-yt:latest
+1. Download iOS ringtone by YouTube video
 
-# add fadein fadeout for ringtone
-# FADEIN: fadein duration: second (Options)
-# FADEOUT: fadeout duration: second (Options)
-docker run --rm -it -v $(PWD)/output:/app/output -e FADEIN=3 -e FADEOUT=3 -e VID=<youtube-video-id> -e SS=00:00:22 -e T=30 cage1016/ios-ringtone-maker-yt:latest
-```
+    ```bash
+    # VID: youtube video id
+    # SS: start time (format: HH:MM:SS)
+    # T: ringtime duration: second
+    docker run --rm -it -v $(PWD)/output:/output -e VID=<youtube-video-id> -e SS=<ss> -e T=<t> ghcr.io/cage1016/ios-ringtone-maker-yt
+    ```
+
+1. Download iOS ringtone by YouTube video with custom `FADEIN` & `FADEOUT` features
+
+    ```bash
+    # add fadein fadeout for ringtone
+    # FADEIN: fadein duration: second (Options, default set to 3 secs)
+    # FADEOUT: fadeout duration: second (Options, default set to 3 secs)
+    docker run --rm -it -v $(PWD)/output:/output -e FADEIN=3 -e FADEOUT=3 -e VID=<youtube-video-id> -e SS=<ss> -e T=<t> ghcr.io/cage1016/ios-ringtone-maker-yt
+    ```
 
 ## Author
 

@@ -1,0 +1,9 @@
+[[metadata.githubasset]]
+repo = "eugeneware/ffmpeg-static"
+file = "linux-x64"
+target = "ffmpeg"
+
+[[metadata.githubasset]]
+repo = "kkdai/youtube"
+file = "youtubedr_2.7.0_linux_arm64.tar.gz"
+untarpath = "bin"
