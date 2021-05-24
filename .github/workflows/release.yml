@@ -1,6 +1,9 @@
 name: Build
 
 on:
+  push:
+    branches:
+      - master
   workflow_dispatch: # Run workflow manually (without waiting for the cron to be called), through the Github Actions Workflow page directly
 
 jobs:
@@ -23,7 +26,7 @@ jobs:
         run: |
           #!/usr/bin/env bash
           set -euo pipefail
-          pack build ${IMAGE} --builder ${BUILDER} --buildpack cage1016/shell-run-cnb@1.0.0 --buildpack cage1016/github-assets-cnb@2.0.0 --path sample-app --publish
+          pack build ${IMAGE} --builder ${BUILDER} --buildpack cage1016/shell-run-cnb@1.0.0 --buildpack cage1016/github-assets-cnb@2.1.1 --path sample-app --publish
         shell: bash
         env:
           BUILDER: gcr.io/buildpacks/builder:v1
